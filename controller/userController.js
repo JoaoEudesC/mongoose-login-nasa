@@ -12,13 +12,17 @@ const usuarios = require('../models/usuarios')
 
 
 
+
 userController.createUser = (req, res)=>{
+    
     const user = new usuarios({
         Nome:req.body.Nome,
         Idade:req.body.Idade,
+        Senha:req.body.Senha,
         País:req.body.País,
         Profissão:req.body.Profissão,
-        Numero:req.body.Numero
+        Numero:req.body.Numero,
+        
     })
 
     user.save()
@@ -38,6 +42,11 @@ userController.usuariok=(req ,res)=>{
 
 userController.usuariobad = (req, res)=>{
     res.send('usuario nao cadastrado')
+}
+
+
+userController.findall=(req , res)=>{
+    res.send(usuarios)
 }
 
 

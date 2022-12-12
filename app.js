@@ -6,7 +6,7 @@ const app = express()
 const port = 3000
 const router = require('./router/router')
 const path = require('path')
-
+app.use(express.json())
 
     //config
 
